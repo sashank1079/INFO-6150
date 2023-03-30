@@ -1,0 +1,48 @@
+h1{
+  text-align: center;
+}
+h2{
+  text-align: center;
+}
+
+body {
+  background-color: grey;
+}
+
+  .card-container {
+    display: flexbox;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Set container height to full viewport height */
+    margin-left: 50%;
+    margin-right: 50%;
+    align-items: center;
+  }
+  
+  .card {
+    background-color: lightseagreen;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 16px;
+    margin: 16px;
+    max-width: 300px;
+    align-items: center;
+    display: flexbox;
+    flex-direction: row;
+  }
+  
+  .card h2 {
+    font-size: 24px;
+    margin-bottom: 8px;
+    color: white;
+  }
+  
+  .card p {
+    font-size: 16px;
+    color: black;
+    line-height: 1.5;
+    font-weight: bold;
+  }
+  
+  
