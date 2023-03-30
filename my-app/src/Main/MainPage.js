@@ -11,9 +11,6 @@ export default function MainPage() {
         <Link to='/profile'>Profile</Link>
         <Link to='/jobs'>Jobs</Link>
       </nav>
-      <footer>
-        <div>This is footer</div>
-      </footer>
     </div>
   );
 }
