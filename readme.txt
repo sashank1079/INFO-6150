@@ -22,4 +22,6 @@ In React, card components were created using the map() function to create multip
 
 The Card component itself was defined separately in its own file and received the content properties as props. Inside the Card component, the content was rendered using HTML elements like img, h2, and p, and the styles for the Card component were defined in a separate CSS file using classes and IDs.
 
-Overall, the map() function allowed for the creation of multiple instances of the Card component with different content, while the Card component itself defined the appearance and behavior of each card.
+Overall, the map() function allowed for the creation of multiple instances of the Card component with different content, while the Card component itself defined the appearance and behavior of each card. 
+
+END OF FILE
