@@ -1,0 +1,5 @@
+It is a Coffee Shop website where it consists of Login page, Home, About, contact and jobs page react components. Firstly it starts with login page where user details are verfied with backend database details and if the details are matched then the user is redirected into Home component of react page in the application.
+
+Home component is the page that tells about Coffee Shop website. Similarly, Aboutus , contact and Job pages are the ones that briefly describe about the coffee shop  organization, careers in the field and the contact information.In these four react components, react card component has been used in conjuction with bootstrap and two of the pages i.e. Jobs and Aboutus have dynamically generated properties.In these project both front-end and back-end are running concurrently.
+
+To start the project use the command:npm run dev To install Node Modules use the command:npm install

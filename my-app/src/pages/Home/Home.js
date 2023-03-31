@@ -2,7 +2,7 @@ import React from "react";
 import Card from "../Card/Card";
 import "../Card/card.css";
 import "./home.css";
-
+import {  useNavigate, Link  } from "react-router-dom";
 function Home() {
   const data = [
     {
@@ -22,7 +22,17 @@ function Home() {
   ];
 
   return (
+    <div>
+      <nav>
+        <Link to='/home'>Home</Link>
+        <Link to='/about'>About</Link>
+        <Link to='/profile'>Profile</Link>
+        <Link to='/jobs'>Jobs</Link>
+        <Link to='/'>Logout</Link>
+      </nav>
+    
     <div className="home-container">
+    
       <h1 className="home-title">Welcome to our Website</h1>
       <div className="cards-container">
         {data.map((item, index) => (
@@ -32,6 +42,7 @@ function Home() {
       <div className="cta-container">
         <button className="cta-button">Get started</button>
       </div>
+    </div>
     </div>
   );
 }

@@ -1,0 +1,33 @@
+{
+  "name": "reactassignment",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon server.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "node server.js",
+    "react": "npm start --prefix assignment-9",
+    "dev": "concurrently \"npm run start\" \"npm run react\""
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.1.3",
+    "bcrypt": "^5.1.0",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.20.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "email-validator": "^2.0.4",
+    "express": "^4.18.2",
+    "express-validator": "^6.14.2",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.10.4",
+    "nodemon": "^2.0.20",
+    "password-validator": "^5.3.0",
+    "react-router": "^6.4.3",
+    "react-router-dom": "^6.4.3",
+    "validator": "^13.7.0"
+  }
+}
