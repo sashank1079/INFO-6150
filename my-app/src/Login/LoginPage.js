@@ -1,48 +1,63 @@
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import axios from "axios";
-import "./LoginPage.css";
+import React, { useState, useEffect, Redirect } from "react";
+// import React, { useState, useEffect, useHistory } from "react";
+import {  useNavigate, Link  } from "react-router-dom";
+import "../Login/LoginPage.css"
 
-export default function LoginPage({...props}){
-    const navigate = useNavigate();
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
-    const [errorMessage, setErrorMessage] = useState("");
+const Login = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
 
-    const handleSignIn = async (event) => {
-        event.preventDefault();
-        try {
-            const response = await axios.post('http://localhost:3000/api/login', { email, password });
-            console.log(response.data);
-            props.handle();
-            navigate('/home');
-        } catch (error) {
-            console.error(error);
-            if (error.response && error.response.status === 401) {
-                setErrorMessage("Invalid email or password");
-            } else {
-                setErrorMessage("An unexpected error occurred");
-            }
-        }
-    };
+  const navigate =  useNavigate();
 
-    return(
-        <div className="login-page">
-            <h1> Login Page</h1>
-            <form>
-                <label>
-                    Email:
-                    <input type="text" className="login-input" value={email} onChange={(event) => setEmail(event.target.value)} />
-                </label>
-                <br/>
-                <label>
-                    Password:
-                    <input type="password" className="login-input" value={password} onChange={(event) => setPassword(event.target.value)} />
-                </label>
-                <br/>
-                <button type="submit" className="login-button" onClick={handleSignIn}>Sign In</button>
-                {errorMessage && <p className="error-message">{errorMessage}</p>}
-            </form>
-        </div>
-    )
-}
+  const handleEmailChange = (event) => {
+    setEmail(event.target.value);
+  };
+
+  const handlePasswordChange = (event) => {
+    setPassword(event.target.value);
+  };
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    const response = await fetch("http://localhost:8000/user/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json","access-control-allow-origin":"*",
+      },
+      body: JSON.stringify({ email, password }),
+    });
+
+    if (response.ok) {
+      navigate("/home");
+        // return <Redirect to="/home" />
+    } else {
+      const error = await response.json();
+      setErrorMessage(error.message);
+    }
+  };
+
+  useEffect(() => {
+    // Check if user is already logged in and redirect to dashboard or home page
+  }, []);
+
+  return (
+    
+    <div className="container">
+      <h1 className="title">Login</h1>
+      {errorMessage && <p>{errorMessage}</p>}
+      <form onSubmit={handleSubmit} className="form">
+        <label htmlFor="email">Email:</label>
+        <input type="email" id="email" value={email} onChange={handleEmailChange} required />
+        <br />
+        <label htmlFor="password">Password:</label>
+        <input type="password" id="password" value={password} onChange={handlePasswordChange} required />
+        <br />
+        <button type="submit">Login</button>
+      </form>
+    </div>
+  );
+};
+
+export default Login;
