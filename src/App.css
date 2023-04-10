@@ -1,3 +1,11 @@
+body{
+  background-image:url(./weather.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  visibility: visible ;
+
+}
+
 .WeatherForecast {
   margin: 0 auto;
   max-width: 600px;
@@ -5,11 +13,13 @@
   border: 1px solid #ddd;
   box-shadow: 0px 0px 10px #ddd;
   text-align: center;
+  
 }
 
 h1 {
   font-size: 2em;
   margin-bottom: 20px;
+  margin-left: 42%;
 }
 
 form {
@@ -17,6 +27,7 @@ form {
   flex-direction: column;
   align-items: center;
   margin-bottom: 20px;
+  
 }
 
 label {
@@ -44,59 +55,95 @@ button[type="submit"] {
 }
 
 button[type="submit"]:hover {
-  background-color: #00BFFF;
-}
-
-p {
-  font-size: 1.2em;
-  margin-bottom: 10px;
-}
-
-img {
-  width: 100px;
-  height: 100px;
-  margin-bottom: 10px;
-}
-
-h2 {
-  font-size: 1.5em;
-  margin-bottom: 10px;
+  background-color: coral;
 }
 
 .forecast-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content:space-around
+  justify-content: space-around;
+  margin-top: 30px;
 }
 
 .forecast {
-  display: inline-block;
-  width: calc(9% - 1px);
-  margin-bottom: 20px;
-  text-align: center;
-  padding: 1px;
-  border: 10px solid #ddd;
-  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
-  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 150px;
+  height: 200px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+  margin-bottom: 30px;
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.7);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-.forecast img {
-  width: 100px;
-  height: 100px;
-  margin-bottom: 10px;
+.forecast:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px red;
 }
+
+.forecast.selected {
+  border: 2px solid red;
+}
+
+.hourly-heading {
+  margin-top: 30px;
+}
+
+.hourly-forecast {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-top: 30px;
+}
+
+.hourly-forecast li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 150px;
+  height: 200px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  margin-bottom: 30px;
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.7);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.hourly-forecast li:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+}
+
+.hourly-forecast img {
+  width: 50px;
+  height: 50px;
+}
+
+.hourly-forecast p {
+  margin: 5px;
+}
+
 
 .hourly-forecast-container {
   margin-top: 20px;
 }
 
 .hourly-heading{
-  background-color: white;
+  
   margin-left: 37%;
 }
 
 .hourly-forecast {
-  background-color: lightcyan;
   display: inline-block;
   flex-wrap: wrap;
   justify-content: center;
